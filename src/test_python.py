@@ -3,11 +3,21 @@ import csv
 import requests
 import pandas
 import folium
+
 with open('src/liste.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    
     for row in spamreader:
         print(', '.join(row))
 
+amis = pandas.read_csv('src/liste.csv')
+print(amis)
+print(amis.iloc[2])
+print(amis.iloc[2]['prenom'])
+
+for i in range(0,3):
+    print('prenom', amis.iloc[i]['prenom'])
+print(amis['nom'])
 #_______________________________________________________________________________________
 
 l=folium.Map(location=(43.2898668,5.3834864),zoom_start=5)
