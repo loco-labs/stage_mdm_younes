@@ -20,16 +20,16 @@ for i in range(0,3):
 print(amis['nom'])
 #_______________________________________________________________________________________
 
-l=folium.Map(location=(43.2898668,5.3834864),zoom_start=5)
+l=folium.Map(location=(43.2898668,5.3834864),zoom_start=6)
 folium.Marker(
     location=[48.8588255,2.2646331],
-    tooltip="Paris!",
-    popup="paname",
+    tooltip="paris",
+    popup="panam",
     icon=folium.Icon(icon="cloud"),
 ).add_to(l)
 
 folium.Marker(
-    location=[43.292614, 5.366633],
+    location=[43.292614,5.366633],
     tooltip="Marseille",
     popup="la ville bleue",
     icon=folium.Icon(color="noir"),
@@ -61,5 +61,17 @@ gj = folium.GeoJson(
 
 gj.add_child(folium.Popup("outline Popup on GeoJSON"))
 gj.add_to(l)
-l.save("montre.html")
+
 #_______________________________________________________________________
+l = folium.Map(location=(43.2898668,5.3834864),zoom_start=6)
+
+fg = folium.FeatureGroup(name="Icon collection", control=False).add_to(l)
+folium.Marker(location=(43.292614,5.366633),
+              tooltip="Marsseille",
+              popup="la ville bleue",
+              icon=folium.Icon(icon="fa fa-medkit",color="black").
+              add_to(fg))
+
+folium.LayerControl().add_to(l)
+l.save("montre.html")
+#___________________________________________________________________________
