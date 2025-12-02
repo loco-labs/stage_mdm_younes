@@ -3,75 +3,34 @@ import csv
 import requests
 import pandas
 import folium
+import folium
 
-with open('src/liste.csv', newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-    
-    for row in spamreader:
-        print(', '.join(row))
+# Coordonnées de l'endroit où placer le marqueur
+latitude = 43.2850044
+longitude = 5.3908346
 
-amis = pandas.read_csv('src/liste.csv')
-print(amis)
-print(amis.iloc[2])
-print(amis.iloc[2]['prenom'])
+# Informations à afficher
+telephone = "+33 4 86 11 09 26"
+email = "contact@example.com"
 
-for i in range(0,3):
-    print('prenom', amis.iloc[i]['prenom'])
-print(amis['nom'])
-#_______________________________________________________________________________________
+# Contenu HTML du popup
+popup_html = f"""
+<b>Contact :</b><br>
+📞 Téléphone : {telephone}<br>
+✉️ Email : <a href="mailto:{email}">{email}</a>
+"""
 
-l=folium.Map(location=(43.2898668,5.3834864),zoom_start=6)
+# Création de la carte centrée sur le monde
+carte = folium.Map(location=[20, 0], zoom_start=2)
+
+# Ajout du marqueur
 folium.Marker(
-    location=[48.8588255,2.2646331],
-    tooltip="paris",
-    popup="panam",
-    icon=folium.Icon(icon="cloud"),
-).add_to(l)
+    location=[latitude, longitude],
+    popup=folium.Popup(popup_html, max_width=300),
+    tooltip="Médecins du Monde"
+).add_to(carte)
 
-folium.Marker(
-    location=[43.292614,5.366633],
-    tooltip="Marseille",
-    popup="la ville bleue",
-    icon=folium.Icon(color="noir"),
-).add_to(l)
-#___________________________________________________________
+# Sauvegarder la carte dans un fichier HTML
+carte.save("carte_interactive.html")
 
-trail_coordinates = [
-    (43.2802207,5.2158271),
-    (43.6006738,1.3504412),
-    (44.8636882,-0.6684134),
-    (47.2382037,-1.6427356),
-    (48.8588255,2.2646331),
-]
-
-# __________________________________________________________________
-
-folium.PolyLine(trail_coordinates, tooltip="Coast").add_to(l)
-
-ls = folium.PolyLine(
-    locations=[[36.75, 3.06], [36.75, 5.07], [35.39, 5.37], [35.3507, 3.3641], [36.75, 3.06]], color="red"
-)
-
-ls.add_child(folium.Popup("outline Popup on Polyline"))
-ls.add_to(l)
-
-gj = folium.GeoJson(
-    data={"type": "Polygon", "coordinates": [[[27, 43], [33, 43], [33, 47], [27, 47]]]}
-)
-
-gj.add_child(folium.Popup("outline Popup on GeoJSON"))
-gj.add_to(l)
-
-#_______________________________________________________________________
-l = folium.Map(location=(43.2898668,5.3834864),zoom_start=6)
-
-fg = folium.FeatureGroup(name="Icon collection", control=False).add_to(l)
-folium.Marker(location=(43.292614,5.366633),
-              tooltip="Marsseille",
-              popup="la ville bleue",
-              icon=folium.Icon(icon="fa fa-medkit",color="black").
-              add_to(fg))
-
-folium.LayerControl().add_to(l)
-l.save("montre.html")
-#___________________________________________________________________________
+print("Carte créée : ouvrez 'carte_interactive.html' dans votre navigateur.")
