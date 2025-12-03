@@ -3,7 +3,6 @@ import csv
 import requests
 import pandas
 import folium
-import folium
 
 # Coordonnées de l'endroit où placer le marqueur
 latitude = 43.28498595454043 
@@ -12,15 +11,15 @@ longitude = 5.393399663866488
 # Informations à afficher
 telephone = "+33 4 86 11 09 26"
 email = "contact@example.com"
-jours_ouverts = """
 
-Lundi : 13;30h - 15;30h<br>,
-Mardi : Fermé,
+jours_ouverts = """
+Lundi : 13:30h - 15:30h<br>,
+Mardi : Fermé<br>,
 Mercredi : 9h - 11h<br>,
-Jeudi : Fermé,
+Jeudi : Fermé<br>,
 Vendredi : 9h - 11h<br>,
-Samedi : Fermé,
-Dimanche : Fermé
+Samedi : Fermé<br>,
+Dimanche : Fermé<br>
 """
 # Contenu HTML de la popup
 popup_html = f"""
@@ -30,7 +29,6 @@ popup_html = f"""
 <b>Jours d'ouverture :</b><br>
 {jours_ouverts}
 """
-
 
 # Création de la carte centrée sur le monde
 carte = folium.Map(location=[46.5, 2.5], zoom_start=5)
@@ -43,6 +41,6 @@ folium.Marker(
 ).add_to(carte)
 
 # Sauvegarder la carte dans un fichier HTML
-carte.save("carte_interactive.html")
+carte.save("carte_medcin du monde.html")
 
-print("Carte créée : ouvrez 'carte_interactive.html' dans votre navigateur.")
+print("Carte créée : ouvrez 'carte_medcin du monde' dans votre navigateur.")
