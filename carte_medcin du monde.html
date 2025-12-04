@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_75230bc511d57200a189699a6689c9b8 {
+                #map_8cde7cadbb8d9b180ea93836ea5c5783 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,19 +54,19 @@
 <body>
     
     
-            <div class="folium-map" id="map_75230bc511d57200a189699a6689c9b8" ></div>
+            <div class="folium-map" id="map_8cde7cadbb8d9b180ea93836ea5c5783" ></div>
         
 </body>
 <script>
     
     
-            var map_75230bc511d57200a189699a6689c9b8 = L.map(
-                "map_75230bc511d57200a189699a6689c9b8",
+            var map_8cde7cadbb8d9b180ea93836ea5c5783 = L.map(
+                "map_8cde7cadbb8d9b180ea93836ea5c5783",
                 {
-                    center: [43.28498595454043, 5.393399663866488],
+                    center: [46.5, 2.5],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 12,
+  "zoom": 5,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -78,7 +78,7 @@
 
         
     
-            var tile_layer_bc4f0a523b6b732a9a01bfee51f78c98 = L.tileLayer(
+            var tile_layer_df8e8fd763c960f444da4bccd424b708 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,34 +95,34 @@
             );
         
     
-            tile_layer_bc4f0a523b6b732a9a01bfee51f78c98.addTo(map_75230bc511d57200a189699a6689c9b8);
+            tile_layer_df8e8fd763c960f444da4bccd424b708.addTo(map_8cde7cadbb8d9b180ea93836ea5c5783);
         
     
-            var marker_bbbc9b3885366735b84edd72c2480855 = L.marker(
+            var marker_81c9a15754d2425370199effdb341d7b = L.marker(
                 [43.28498595454043, 5.393399663866488],
                 {
 }
-            ).addTo(map_75230bc511d57200a189699a6689c9b8);
+            ).addTo(map_8cde7cadbb8d9b180ea93836ea5c5783);
         
     
-        var popup_4442a79ae4c10eeb1cd291060a09684a = L.popup({
+        var popup_f3b40124517483330baa57b995aa4e00 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_44e63eda82f8eb7f8e7d471b5e362b5c = $(`<div id="html_44e63eda82f8eb7f8e7d471b5e362b5c" style="width: 100.0%; height: 100.0%;"> <b>Contact :</b><br> 📞 Téléphone : +33 4 86 11 09 26<br> ✉️ Email : <a href="mailto:contact@example.com">contact@example.com</a><br><br> <b>Jours d'ouverture :</b><br>  Lundi : 13:30h - 15:30h<br> Mardi : Fermé<br> Mercredi : 9h - 11h<br> Jeudi : Fermé<br> Vendredi : 9h - 11h<br> Samedi : Fermé<br> Dimanche : Fermé<br>  </div>`)[0];
-                popup_4442a79ae4c10eeb1cd291060a09684a.setContent(html_44e63eda82f8eb7f8e7d471b5e362b5c);
+                var html_90d1bbe30a818f1a82fb4605babadebe = $(`<div id="html_90d1bbe30a818f1a82fb4605babadebe" style="width: 100.0%; height: 100.0%;"> <b>Contact :</b><br> 📞 Téléphone : +33 4 86 11 09 26<br> ✉️ Email : <a href="mailto:contact@example.com">contact@example.com</a><br><br> <b>Jours d'ouverture :</b><br>  Lundi : 13:30h - 15:30h<br>, Mardi : Fermé<br>, Mercredi : 9h - 11h<br>, Jeudi : Fermé<br>, Vendredi : 9h - 11h<br>, Samedi : Fermé<br>, Dimanche : Fermé<br>  </div>`)[0];
+                popup_f3b40124517483330baa57b995aa4e00.setContent(html_90d1bbe30a818f1a82fb4605babadebe);
             
         
 
-        marker_bbbc9b3885366735b84edd72c2480855.bindPopup(popup_4442a79ae4c10eeb1cd291060a09684a)
+        marker_81c9a15754d2425370199effdb341d7b.bindPopup(popup_f3b40124517483330baa57b995aa4e00)
         ;
 
         
     
     
-            marker_bbbc9b3885366735b84edd72c2480855.bindTooltip(
+            marker_81c9a15754d2425370199effdb341d7b.bindTooltip(
                 `<div>
                      Médecins du Monde
                  </div>`,
