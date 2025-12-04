@@ -1,3 +1,7 @@
-lieu,aide,activité,latitude,longitude,contact,fréquence,horaire,adresse
-CASO,médicale-psycho,local-acceuil,43.28498595454043," 5.393399663866488",email,3/7,9H-12H,129 Avenu de toulon 13005
-fronton,médicale-psycho,local,43.3266812,5.3655101,email,1/mois,9H-15H,97Rue de lyon 13015 
+lieu,AME,activité,latitude,longitude,contact,jour,horaire,adresse,consultation medecins,consultation partenaires,orientation sociales,lien et temoignages,rdr,telephone,social renforcé
+CASO,oui,fix,43.28498595454043," 5.393399663866488",claudia.marchetti@medecinsdumonde.net,3/7,9H-12H,129 Avenu de toulon 13005,oui,non,oui,non,non,06 65 26 46 97,oui
+fronton,oui,permanence,43.3266812,5.3655101,claudia.marchetti@medecinsdumonde.net,2 e mardi du mois,9H-15H,"97 Rue de lyon 13015,",oui,oui,oui,oui,non,06 65 26 46 97,non
+rèseau13,oui,permanence,43.3254996,5.4286657,claudia.marchetti@medecinsdumonde.net,4 e mercredi du mois,9H-15H,"53 Av. de Frais Vallon, 13013",oui,oui,oui,oui,oui,06 65 26 46 97,non
+la rose,oui,mobile,43.3273465,5.4199493,claudia.marchetti@medecinsdumonde.net,tous les mercredi,9H-11H,"79 Av. de la Rose, 13013 ",non,non,oui,oui,oui,06 65 26 46 97,non
+marché au puces,oui,mobile,43.32670834356679,5.362921469853341,claudia.marchetti@medecinsdumonde.net,le mardi tous les 15 jours,9H-15H,"136 Av. du Cap-Pinède, 13002",non,non,oui,oui,non,06 65 26 46 97,non
+platforme du batiment,oui,mobile,43.3312598,5.3676166,claudia.marchetti@medecinsdumonde.net,le mardi tous les 15 jours,9H-11H,"53 Bd Capitaine Gèze, 13014",non,non,oui,oui,non,06 65 26 46 97,non

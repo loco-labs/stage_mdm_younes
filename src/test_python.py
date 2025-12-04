@@ -6,32 +6,57 @@ import folium
 
 # lire le fichier csv et créer un DataFrame pandas
 projet = pandas.read_csv('src/liste projet.csv')
-# print(projet)
+print(projet.columns)
 
 # création de la carte
-map_mdm = folium.Map(location=(43.2898668,5.3834864),zoom_start=5)
+map_mdm = folium.Map(location=(43.3062817,5.3795732),zoom_start=13)
 
 # créer les icones à partir du DataFrame
 lignes = len(projet)
 for i in range(0,lignes):
     lieu = projet.iloc[i]['lieu']
-    aide = projet.iloc[i]['aide']
     activite = projet.iloc[i]['activité']
     latitude = projet.iloc[i]['latitude']
     longitude = projet.iloc[i]['longitude']
     contact = projet.iloc[i]['contact']
-    frequence = projet.iloc[i]['fréquence']
+    jour = projet.iloc[i]['jour']
     horaire = projet.iloc[i]['horaire']
+    adresse = projet.iloc[i]['adresse']
+    AME = projet.iloc[i]['AME']
+    medecins  = projet.iloc[i]['consultation medecins']
+    partenaires = projet.iloc[i]['consultation partenaires']
+    orientation = projet.iloc[i]['orientation sociales']
+    temoignages = projet.iloc[i]['lien et temoignages']
+    rdr = projet.iloc[i]['rdr']
+    telephone = projet.iloc[i]['telephone']
+    social = projet.iloc[i]['social renforcé']
+
 
 #    print('lieu, horaire ', lieu, horaire)
 
 # Contenu HTML de la popup
     popup_html = f"""
-    <b>Information :</b><br><br>
-    lieu : {lieu}<br>
-    ✉️ Email : <a href="mailto:{contact}">{contact}</a><br>
-    horaire : {horaire}<br>
+    <b> {lieu}</b><br><br>
+    <b>adresse :</b> {adresse}<br>
+    <b>📞 Téléphone :</b> {telephone}<br>
+    <b>✉️ email : </b><a href="mailto:{contact}">{contact}</a><br>
+    <b>jour :</b> {jour}<br>
+    <b>horaire :</b> {horaire}<br>
     """
+    if  AME == "oui":
+        popup_html +=  f"""<b> AME :</b> {AME}<br> """
+    if  medecins == "oui":
+        popup_html +=  f""" <b>consultation medecins :</b> {medecins}<br> """
+    if partenaires == "oui":
+        popup_html +=  f""" <b>consultation partenaires :</b> {partenaires}<br> """
+    if orientation == "oui":
+        popup_html +=  f""" <b>orientation sociales :</b> {orientation}<br> """
+    if  temoignages == "oui":
+        popup_html +=  f""" <b>lien et temoignages :</b> {temoignages}<br> """
+    if rdr == "oui":
+        popup_html +=  f""" <b>rdr :</b> {rdr}<br> """          
+    if social == "oui":
+        popup_html +=  f""" <b>social renforcé :</b> {social}<br> """      
 #    print('popup : ', popup_html)
 
 # Ajout du marqueur
